@@ -19,12 +19,8 @@ jobs:
         run: |
           pip install -r requirements.txt
       
-      - name: Descargar artefactos del run anterior
-        uses: actions/download-artifact@v4
-        with:
-          name: mlruns
-          path: mlruns/
-      
       - name: Promocionar modelo (simulado)
         run: |
           echo "✅ Promoción del modelo validado a producción"
+          echo "📦 En un entorno real, aquí se desplegaría el modelo"
+          echo "🚀 Ejemplo: mlflow models serve -m models:/diabetes-model/production -p 5001"
